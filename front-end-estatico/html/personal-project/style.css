@@ -3,8 +3,8 @@ body {
 }
 
 hr {
-  border-style: none;
-  background-color: white;
-  height: 2px;
-  width: 40%;
+  width: 5%;
+  border-style: dotted none none;
+  border-width: 5px;
+  border-color: grey;
 }
