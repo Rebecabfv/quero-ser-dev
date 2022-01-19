@@ -1,5 +1,5 @@
 body {
-  background-color: #cee5d0;
+  background-color: #f3f0d7;
 }
 
 hr {
@@ -7,4 +7,9 @@ hr {
   border-style: dotted none none;
   border-width: 5px;
   border-color: grey;
+}
+
+h1,
+h3 {
+  color: #ffbf86;
 }
