@@ -57,6 +57,9 @@ iframe {
   border-radius: 50%;
 }
 
+.font {
+  font-family: fantasy;
+}
 .div-body {
   margin: 0;
   width: 100%;
