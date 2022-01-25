@@ -1,3 +1,7 @@
+.margin-zero {
+  margin: 0px;
+}
+
 .fixed-header {
   position: fixed;
   bottom: 0px;
