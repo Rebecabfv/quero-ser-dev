@@ -74,6 +74,28 @@ iframe {
   background-color: #cee5d0;
 }
 
+.title-portfolio {
+  text-align: center;
+  font-size: 23px;
+  padding: 20px;
+}
+.grid-container {
+  display: grid;
+  height: 700px;
+  width: 100%;
+  grid-gap: 50px 50px;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-rows: 30% 30%;
+  justify-content: center;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 5%;
+  text-align: center;
+}
+
 .div-form {
   text-align: center;
   width: 100%;
