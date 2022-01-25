@@ -8,13 +8,44 @@
     <title>Rebeca Baptista</title>
   </head>
   <body>
-    <div class="container">
-      <div>Home</div>
-      <div>About me</div>
-      <div>Portfolio</div>
-      <div>Contact me</div>
-    </div>
-    <div class="div-body bg-light-green table-container">
+    <header>
+      <div class="flex-container fixed-header">
+        <div>
+          <form action="#home" class="padding-top">
+            <input class="submit-container-items" type="submit" value="Home" />
+          </form>
+        </div>
+        <div class="flex-container-item">
+          <form action="#aboutme" class="padding-top">
+            <input
+              class="submit-container-items"
+              type="submit"
+              value="About me"
+            />
+          </form>
+        </div>
+        <div class="flex-container-item">
+          <form action="#portfolio" class="padding-top">
+            <input
+              class="submit-container-items"
+              type="submit"
+              value="Portfolio"
+            />
+          </form>
+        </div>
+        <div class="flex-container-item">
+          <form action="#contactme" class="padding-top">
+            <input
+              class="submit-container-items"
+              type="submit"
+              value="Contact me"
+            />
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <div class="div-body bg-light-green table-container" id="home">
       <div class="table-item">
         <h2>Physical Education Professional</h2>
         <iframe src="https://giphy.com/embed/X5MlWW8T8fqwDl2538"></iframe>
@@ -34,9 +65,11 @@
         <iframe src="https://giphy.com/embed/ekjmhJUGHJm7FC4Juo"></iframe>
       </div>
     </div>
-    <div class="div-body bg-green">About me</div>
-    <div class="div-body bg-light-green">Portfolio</div>
-    <div class="div-body bg-green">
+    <div class="div-body bg-green" id="aboutme">About me</div>
+    <div class="div-body bg-light-green" id="portfolio">
+      <h2>Latest projects posted</h2>
+    </div>
+    <div class="div-body bg-green" id="contactme">
       <div class="div-form">
         <h2>Contact me</h2>
         <form
