@@ -1,0 +1,95 @@
+.red {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  display: inline-block;
+  position: relative;
+  left: 200px;
+}
+
+.azul {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  display: inline-block;
+  position: relative;
+  right: 100px;
+}
+
+.amarelo {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  display: inline-block;
+  position: relative;
+  right: 100px;
+}
+
+.red-relative {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: relative;
+  top: 200px;
+  left: 200px;
+}
+
+.azul-relative {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  position: relative;
+  bottom: 100px;
+}
+
+.amarelo-relative {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  position: relative;
+  bottom: 100px;
+  left: 100px;
+}
+
+.red-absolute {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
+  top: 630px;
+  left: 210px;
+}
+
+.azul-absolute {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  position: absolute;
+  left: 110px;
+  top: 530px;
+}
+
+.amarelo-absolute {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  position: absolute;
+}
