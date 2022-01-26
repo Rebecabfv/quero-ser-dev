@@ -93,3 +93,21 @@
   background-color: yellow;
   position: absolute;
 }
+
+.container {
+  position: relative;
+  background-color: grey;
+  width: 500px;
+  height: 500px;
+  top: 350px;
+}
+
+.red-absolute-filho {
+  margin: 0px;
+  padding: 0px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
+  left: 10px;
+}
