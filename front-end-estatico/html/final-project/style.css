@@ -2,6 +2,10 @@
   margin: 0px;
 }
 
+.border-radius {
+  border-radius: 5%;
+}
+
 .fixed-header {
   position: fixed;
   bottom: 0px;
@@ -74,26 +78,61 @@ iframe {
   background-color: #cee5d0;
 }
 
-.title-portfolio {
+.title {
   text-align: center;
   font-size: 23px;
   padding: 20px;
 }
+
+.title-principal {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+
 .grid-container {
   display: grid;
   height: 700px;
   width: 100%;
   grid-gap: 50px 50px;
-  grid-template-columns: 25% 25% 25%;
-  grid-template-rows: 30% 30%;
+  grid-template-columns: 20% 20% 20%;
+  grid-template-rows: 45% 45%;
   justify-content: center;
 }
 
 .grid-item {
   background-color: white;
-  border: 1px black solid;
-  border-radius: 5%;
   text-align: center;
+}
+
+.flex-container-item {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  border: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.flex-subitem {
+  text-align: center;
+}
+
+.first {
+  width: 100%;
+  height: 70%;
+  font-size: 15px;
+}
+
+.second {
+  width: 100%;
+  height: 30%;
+}
+
+.p-flex {
+  padding-top: 15px;
 }
 
 .div-form {
