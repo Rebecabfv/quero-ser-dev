@@ -6,6 +6,11 @@
   border-radius: 5%;
 }
 
+.p-header {
+  display: inline-block;
+  font-size: 23px;
+}
+
 .flex-container-header {
   display: flex;
   align-items: center;
@@ -28,6 +33,7 @@
   cursor: pointer;
   border: 0px;
   border-bottom: 1px solid black;
+  font-family: fantasy;
 }
 
 .padding-top {
