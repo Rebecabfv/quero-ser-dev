@@ -119,6 +119,10 @@ iframe {
   text-align: justify;
 }
 
+.indent {
+  text-indent: 30px;
+}
+
 .table-about {
   text-align: start;
   border-spacing: 10px;
