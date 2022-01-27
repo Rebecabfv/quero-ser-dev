@@ -105,6 +105,11 @@ iframe {
   height: 8%;
 }
 
+.img-rebeca {
+  position: relative;
+  top: 25%;
+}
+
 .center {
   position: relative;
   top: 15%;
