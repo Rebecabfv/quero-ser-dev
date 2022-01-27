@@ -105,6 +105,12 @@ iframe {
   font-size: 120%;
 }
 
+.img-about {
+  position: relative;
+  width: 8%;
+  height: 8%;
+}
+
 .center {
   position: relative;
   top: 15%;
@@ -126,7 +132,7 @@ iframe {
   border: 1px solid black;
   width: 75%;
   position: relative;
-  top: 15%;
+  top: 10%;
   left: 5%;
   margin: 0 auto 0 auto;
   vertical-align: middle;
