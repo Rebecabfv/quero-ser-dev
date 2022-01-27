@@ -81,7 +81,7 @@ iframe {
 .title {
   text-align: center;
   font-size: 23px;
-  padding: 20px;
+  padding: 50px 30px;
 }
 
 .title-principal {
@@ -92,27 +92,44 @@ iframe {
 
 .flex-container-about {
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 600px;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
 }
 
 .flex-container-about-item {
-  border: 1px solid;
   height: 600px;
   width: 100%;
   text-align: center;
+  font-size: 120%;
+}
+
+.center {
+  position: relative;
+  top: 15%;
+}
+
+.div-width {
+  width: 80%;
+  padding-left: 10%;
+}
+
+.justify {
+  text-align: justify;
 }
 
 .table-about {
   text-align: start;
-  border-collapse: 30px;
-  border-spacing: 20px;
+  border-spacing: 10px;
   padding: 5px;
   border: 1px solid black;
-  width: 100%;
+  width: 75%;
+  position: relative;
+  top: 15%;
+  left: 5%;
+  margin: 0 auto 0 auto;
+  vertical-align: middle;
 }
 
 .grid-container {
@@ -143,6 +160,7 @@ iframe {
 
 .flex-subitem {
   text-align: center;
+  font-size: 100%;
 }
 
 .first {
@@ -153,7 +171,6 @@ iframe {
 .second {
   width: 100%;
   height: 30%;
-  font-size: 100%;
 }
 
 .p-flex {
@@ -164,8 +181,11 @@ iframe {
   text-align: center;
   width: 100%;
   margin: 0px 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
+}
+
+.padding-form {
+  padding-bottom: 70px;
+  padding-top: 0px;
 }
 
 form {
