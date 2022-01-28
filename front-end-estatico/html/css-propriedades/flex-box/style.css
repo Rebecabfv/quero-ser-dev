@@ -1,5 +1,16 @@
+.el {
+  /* PADRÃO 
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0; */
+  flex-basis: 100px;
+  flex-shrink: 0;
+  /* Ocupa todos os espaços vazios da tela */
+  flex-grow: 1;
+}
 .el--1 {
   background-color: blueviolet;
+  align-self: flex-start;
 }
 .el--2 {
   background-color: orangered;
@@ -10,18 +21,22 @@
 }
 .el--4 {
   background-color: goldenrod;
+  order: 1;
 }
 .el--5 {
   background-color: palevioletred;
+  align-self: stretch;
 }
 .el--6 {
   background-color: steelblue;
+  order: 2;
 }
 .el--7 {
   background-color: yellow;
 }
 .el--8 {
   background-color: crimson;
+  order: -1;
 }
 
 .container {
@@ -33,6 +48,14 @@
 
   /* FLEXBOX */
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-around;
+  gap: 30px;
+  /* espacamento entre as divs */
+}
+
+@media screen {
+  .el {
+    flex-direction: column;
+  }
 }
