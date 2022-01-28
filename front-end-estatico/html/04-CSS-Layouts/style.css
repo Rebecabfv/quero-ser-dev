@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
@@ -37,6 +37,7 @@ nav {
 
 article {
   margin-bottom: 0;
+  flex: 0 0 825px;
 }
 
 .post-header {
@@ -265,3 +266,19 @@ footer p {
 nav p {
   font-size: 18px;
 } */
+
+.row {
+  display: flex;
+  /* Colocar espaço entre as divs */
+  gap: 75px;
+  align-items: flex-start;
+}
+
+aside {
+  /* flex-grow: 0;
+  flex-basis: 300px;
+  flex-shrink: 0; 
+  Alterar a largura de algum container tem que alterar o flex-basis e setar o flex-shrink
+  */
+  flex: 0 0 300px;
+}
