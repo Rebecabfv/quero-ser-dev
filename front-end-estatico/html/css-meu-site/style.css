@@ -10,10 +10,17 @@ h1 {
   width: 20%;
   margin: 0 auto 0 auto;
   font-family: "Sacramento", cursive;
+  font-size: 562.5%;
+  /* 1em = 16px = 100% 
+  em e % = acessível
+  px = não dinanimo 
+  em = problema de herança 
+  rem = é responsivo e nao herda*/
 }
 
 h2 {
   font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
 }
 
 /* Se setar a largura nao funciona o text-align, por isso tem que dar margen auto */
