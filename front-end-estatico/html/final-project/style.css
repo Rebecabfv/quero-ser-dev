@@ -16,6 +16,7 @@
   background-color: #f3f0d7;
   padding-top: 1%;
   padding-left: 10%;
+  width: auto;
 }
 
 nav {
@@ -85,7 +86,7 @@ iframe {
 .div-body {
   margin: 0;
   width: 100%;
-  height: 930px;
+  height: 58.1rem;
 }
 
 .bg-light-green {
@@ -98,26 +99,26 @@ iframe {
 
 .title {
   text-align: center;
-  font-size: 23px;
+  font-size: 1.43rem;
   padding: 40px 30px 30px 30px;
 }
 
 .title-principal {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.87rem;
   padding: 20px;
 }
 
 .flex-container-about {
   display: flex;
   width: 100%;
-  height: 600px;
+  height: 37.5rem;
   justify-content: center;
   align-items: center;
 }
 
 .flex-container-about-item {
-  height: 600px;
+  height: 37.5rem;
   width: 100%;
   text-align: center;
   font-size: 120%;
@@ -167,7 +168,7 @@ iframe {
 
 .grid-container {
   display: grid;
-  height: 700px;
+  height: 43.75rem;
   width: 100%;
   grid-gap: 50px 50px;
   grid-template-columns: 20% 20% 20%;
@@ -229,12 +230,12 @@ form {
 
 form label {
   display: block;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .input-form {
   text-align: center;
-  font-size: 15px;
+  font-size: 0.938rem;
   font-family: fantasy;
 }
 
@@ -258,8 +259,9 @@ form label {
 .height-auto {
   height: auto;
 }
+
 .icon {
   padding: 10px 10px;
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
