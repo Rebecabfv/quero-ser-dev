@@ -1,4 +1,4 @@
-.margin-zero {
+* {
   margin: 0px;
 }
 
@@ -10,6 +10,17 @@
   padding-top: 0px;
 }
 
+.image-radius {
+  border-radius: 50%;
+}
+
+.font {
+  font-family: fantasy;
+}
+
+.container {
+  margin: 0 auto;
+}
 /* HEADER */
 
 .main-header {
@@ -56,33 +67,37 @@ a:hover {
 
 /* ------------------------- */
 
-.table-container {
-  display: table;
+/* HOME */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  text-align: center;
 }
 
-.table-item {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+.flex-item {
   width: 30%;
   height: 30%;
-  padding: 5px;
-  margin: 10px;
 }
 
 iframe {
   border: 0px;
   width: 40%;
   height: 20%;
+  font-size: 2rem;
 }
 
-.image-radius {
-  border-radius: 50%;
+h1 {
+  padding: 7% 0;
+  text-align: center;
+  font-size: 3rem;
 }
 
-.font {
-  font-family: fantasy;
-}
+/* ------------------------- */
+
+/* DIVS BODY */
 .div-body {
   margin: 0;
   width: 100%;
@@ -97,16 +112,12 @@ iframe {
   background-color: #cee5d0;
 }
 
+/* ------------------------- */
+
 .title {
   text-align: center;
   font-size: 1.43rem;
   padding: 40px 30px 30px 30px;
-}
-
-.title-principal {
-  text-align: center;
-  font-size: 1.87rem;
-  padding: 20px;
 }
 
 .flex-container-about {
@@ -265,3 +276,21 @@ form label {
   width: 1.875rem;
   height: 1.875rem;
 }
+
+/* @media screen {
+  flex-wrap: wrap; (quebrar linha)
+  flex-flow: column wrap (flex-direction + flex-wrap)
+} */
+/* 
+justify-content
+align-items
+flex-direction
+order
+align-self
+flex-wrap
+flex-flow
+align-content */
+
+/* 
+This can be confusing, but align-content determines the spacing between lines, while align-items determines how the 
+items as a whole are aligned within the container. When there is only one line, align-content has no effect. */
