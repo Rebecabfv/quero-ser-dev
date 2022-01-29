@@ -23,6 +23,7 @@
 
 .container {
   margin: 0 auto;
+  height: 100vw;
 }
 /* HEADER */
 
@@ -97,6 +98,7 @@ h1 {
   text-align: center;
   font-size: 3.5rem;
   font-family: "Sacramento", cursive;
+  height: auto;
 }
 
 h3 {
@@ -185,6 +187,9 @@ h2 {
   vertical-align: middle;
 }
 
+/* ------------------------- */
+
+/* PORTFOLIO */
 .grid-container {
   display: grid;
   height: 43.75rem;
@@ -230,6 +235,41 @@ h2 {
   padding-top: 3%;
 }
 
+@media screen and (max-width: 667px) {
+  /* ABOUT ME */
+  .flex-container-about {
+    flex-direction: column;
+  }
+
+  .div-body {
+    overflow: auto;
+  }
+
+  /* PORTFOLIO */
+  .grid-container {
+    grid-template-columns: 80%;
+    grid-template-rows: 45% 45% 45% 45% 45% 45%;
+    overflow: scroll;
+  }
+
+  .flex-container-about,
+  .flex-container-about-item {
+    height: auto;
+  }
+
+  .div-body {
+    overflow: auto;
+    height: 100%;
+  }
+
+  .position {
+    top: 0px;
+  }
+}
+
+/* ------------------------- */
+
+/* CONTACT ME*/
 .div-form {
   text-align: center;
   width: 100%;
@@ -253,17 +293,18 @@ form label {
 }
 
 .input-form {
+  display: block;
+  margin: 0 0 20px;
+  padding: 10px 0px;
+  width: 100%;
   text-align: center;
   font-size: 0.938rem;
   font-family: fantasy;
 }
 
-.form-block {
-  display: block;
-  margin: 0 0 20px;
-  padding: 10px 0px;
-  width: 100%;
-}
+/* ------------------------- */
+
+/* FOOTER*/
 
 .flex-container-footer {
   display: flex;
@@ -289,6 +330,7 @@ form label {
   flex-wrap: wrap; (quebrar linha)
   flex-flow: column wrap (flex-direction + flex-wrap)
 } */
+
 /* 
 justify-content
 align-items
