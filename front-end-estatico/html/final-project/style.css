@@ -276,13 +276,9 @@ h2 {
   margin: 0px 0;
 }
 
-.padding-form {
-  padding-bottom: 20px;
-  padding-top: 0px;
-}
-
 form {
-  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-top: 40px;
   display: inline-block;
   width: 40%;
 }
@@ -299,7 +295,7 @@ form label {
   width: 100%;
   text-align: center;
   font-size: 0.938rem;
-  font-family: fantasy;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ------------------------- */
@@ -324,6 +320,11 @@ form label {
   padding: 10px 10px;
   width: 1.875rem;
   height: 1.875rem;
+}
+
+.p-footer {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 /* @media screen {
