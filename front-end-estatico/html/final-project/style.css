@@ -95,6 +95,10 @@ h1 {
   font-size: 3rem;
 }
 
+h3 {
+  font-size: 1.6rem;
+}
+
 /* ------------------------- */
 
 /* DIVS BODY */
@@ -112,13 +116,13 @@ h1 {
   background-color: #cee5d0;
 }
 
-/* ------------------------- */
-
-.title {
+h2 {
   text-align: center;
   font-size: 1.43rem;
   padding: 40px 30px 30px 30px;
 }
+
+/* ------------------------- */
 
 .flex-container-about {
   display: flex;
