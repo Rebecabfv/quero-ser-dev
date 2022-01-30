@@ -10,9 +10,10 @@ h1 {
   width: 20%;
   margin: 0 auto 0 auto;
   font-family: "Sacramento", cursive;
-  font-size: 562.5%;
+  font-size: 500%;
   color: #66bfbf;
   font-weight: normal;
+  font-weight: bold;
   /* line-height: 2 - espacaemento entre as linhas */
 
   /* 1em = 16px = 100% 
@@ -24,7 +25,7 @@ h1 {
 
 h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #66bfbf;
 }
 
@@ -36,16 +37,41 @@ a {
   color: #11999e;
 }
 
+p {
+  color: #40514e;
+}
+
+hr {
+  width: 5%;
+  border-style: dotted none none;
+  border-width: 5px;
+  border-color: grey;
+  padding-bottom: 30px;
+}
+
+.padding-bottom {
+  padding-bottom: 30px;
+}
 /* Se setar a largura nao funciona o text-align, por isso tem que dar margen auto */
 
 .top-container {
-  background-color: #cee5d0;
+  background-color: #eaf6f6;
   position: relative;
   padding-top: 100px;
 }
 
+.first {
+  flex-basis: auto;
+  width: 30%;
+}
+
 .middle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
+  position: relative;
 }
 
 .bottom-container {
@@ -54,13 +80,18 @@ a {
 
 .bottom-cloud {
   position: absolute;
-  top: 200px;
-  left: 300px;
-  bottom: 200px;
+  top: 12.5rem;
+  left: 18.75rem;
+  bottom: 12.5rem;
 }
 
 .top-cloud {
   position: absolute;
-  right: 300px;
-  top: 50px;
+  right: 18.75rem;
+  top: 3.125rem;
+}
+
+.img {
+  border-radius: 50%;
+  padding-top: 50px;
 }
