@@ -1,6 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: white;
-  margin: 0;
   text-align: center;
   font-family: "Merriweather", serif;
 }
@@ -27,10 +30,12 @@ h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   color: #66bfbf;
+  padding: 25px 0;
 }
 
 h3 {
   color: #11999e;
+  padding-bottom: 10px;
 }
 
 a {
@@ -39,6 +44,7 @@ a {
 
 p {
   color: #40514e;
+  padding-top: 15px;
 }
 
 hr {
@@ -46,12 +52,17 @@ hr {
   border-style: dotted none none;
   border-width: 5px;
   border-color: grey;
-  padding-bottom: 30px;
+  margin: 30px 0;
 }
 
 .padding-bottom {
   padding-bottom: 30px;
 }
+
+.margin-right {
+  margin-right: 30px;
+}
+
 /* Se setar a largura nao funciona o text-align, por isso tem que dar margen auto */
 
 .top-container {
@@ -62,7 +73,7 @@ hr {
 
 .first {
   flex-basis: auto;
-  width: 30%;
+  width: 24%;
 }
 
 .middle-container {
@@ -74,13 +85,27 @@ hr {
   position: relative;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin: 0 auto 0 auto;
+}
+
+.item {
+  flex-basis: auto;
+  width: 30%;
+}
+
 .bottom-container {
-  background-color: #cee5d0;
+  background-color: #66bfbf;
 }
 
 .bottom-cloud {
   position: absolute;
-  top: 12.5rem;
+  top: 20.5rem;
   left: 18.75rem;
   bottom: 12.5rem;
 }
@@ -93,5 +118,38 @@ hr {
 
 .img {
   border-radius: 50%;
-  padding-top: 50px;
+  margin-top: 40px;
+  width: 200px;
+  height: 200px;
+}
+
+.contact {
+  flex-basis: auto;
+  width: 50%;
+}
+
+button {
+  background-color: #66bfbf;
+  height: 40px;
+  width: 140px;
+  color: white;
+  border: 0;
+  border-radius: 5%;
+  font-size: 20px;
+  margin: 30px;
+}
+
+.align-start {
+  text-align: start;
+}
+
+a {
+  color: #11999e;
+  padding: 20px;
+}
+
+.footer {
+  color: #eaf6f6;
+  padding-bottom: 20px;
+  font-size: 0.8rem;
 }
