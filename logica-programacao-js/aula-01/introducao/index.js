@@ -37,3 +37,7 @@ console.log(`Esse é o dobro do número: ${dobro}`);
 // var sobre hoisting e é declarada automaticamente no início do nosso script
 // var não respeita o escopo --> por isso utilizar o let no lugar do var
 // const tem que atribuir valor para variavel no momento de declaração
+
+// 1. Variáveis definidas com const não podem ser redefinidas e tem que ter um valor atribuído a si na sua declaração
+// 2. Variáveis definidas com let podem ser redefinidas e não tem que ter um valor atribuído a si na sua declaração
+// 3. Variáveis definidas com var sofrem *hoisting* e seus valores armazenados estão disponíveis antes de sua declaração ao executarmos o código, gerando problemas de escopo e potencialmente introduzem *bugs* no programa
