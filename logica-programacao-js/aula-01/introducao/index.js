@@ -33,3 +33,7 @@ console.log('Esse é o dobro do número:' + number * 3);
 
 // Template String
 console.log(`Esse é o dobro do número: ${dobro}`);
+
+// var sobre hoisting e é declarada automaticamente no início do nosso script
+// var não respeita o escopo --> por isso utilizar o let no lugar do var
+// const tem que atribuir valor para variavel no momento de declaração
