@@ -18,3 +18,10 @@ function somar(num1, num2) {
 function somar(num1, num2) {
   return isNaN(num1) || isNaN(num2) ? NaN : num1 + num2;
 }
+
+// Parâmetros opcionais --> colocando valor padrão para o parâmetro
+function cumprimenta(nome, periodo = 'noite') {
+  console.log('olá ' + nome);
+  console.log('Estamos no período do dia da ' + periodo);
+}
+cumprimenta('Maria');
