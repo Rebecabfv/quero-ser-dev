@@ -36,4 +36,13 @@ console.log('O número digitado é par: ' + resto);
 
 //Expoente
 const expoente = 2 ** 3;
+// const expoente = Math.pow(2, 3); - jeito antigo de fazer com a biblioteca Math
 console.log(expoente);
+
+//Aproximações numéricass
+// Aproximar para baixo
+console.log(Math.floor(5.5));
+// Aproximar para cima
+console.log(Math.ceil(5.5));
+//Arredondar
+console.log(Math.round(5.7));
