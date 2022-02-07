@@ -28,6 +28,12 @@ console.log(primeiroDiferenteQueSegundo);
 // Peça para o usuário digitar um número e exiba na tela o resultado desta comparação da seguinte forma:
 // O número digitado é par: true
 // O número digitado é par: false
-const number = parseInt(prompt('Digite um número'));
+const number = parseInt(
+  prompt('Digite um número para verificar se o número é par:')
+);
 const resto = number % 2 === 0;
 console.log('O número digitado é par: ' + resto);
+
+//Expoente
+const expoente = 2 ** 3;
+console.log(expoente);
