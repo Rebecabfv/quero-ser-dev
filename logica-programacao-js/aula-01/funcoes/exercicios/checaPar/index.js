@@ -2,9 +2,10 @@
 //  1. Resolva utilizando a sintaxe de function
 function checaPar1(num) {
   const resto = num % 2 === 0;
-  console.log(`${num} é par: ${resto}`);
+  return `${num} é par: ${resto}`;
 }
-checaPar1(2);
+const result = checaPar1(2);
+console.log(result);
 
 //  2. Resolva utilizando a sintaxe de arrow function
 const checaPar2 = (num) => {

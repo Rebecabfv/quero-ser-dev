@@ -14,3 +14,38 @@ else console.log('fui para o campo');
 estaSol = false;
 let ondeVou = estaSol ? 'praia' : 'campo';
 console.log(ondeVou);
+
+function checaPar(numero) {
+  const ehPar = numero % 2 === 0;
+
+  if (ehPar) {
+    return 'par';
+  }
+
+  return 'impar';
+}
+console.log(checaPar(5));
+
+function turnoDoDia() {
+  const horas = Number(prompt('Entre com um horário:'));
+
+  if (horas < 6) {
+    return 'Boa madrugada';
+  }
+
+  if (horas >= 6 && horas < 12) {
+    return 'Bom dia!';
+  }
+
+  if (horas >= 12 && horas < 18) {
+    return 'Bom tarde!';
+  }
+
+  if (horas >= 18 && horas < 24) {
+    return 'Boa noite!';
+  }
+
+  return 'Horário inválido';
+}
+
+console.log(turnoDoDia());
