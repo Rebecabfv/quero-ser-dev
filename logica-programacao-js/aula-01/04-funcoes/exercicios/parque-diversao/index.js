@@ -13,15 +13,16 @@ function verificaAtracoes(anoDeNascimento, altura) {
   const idade = 2021 - anoDeNascimento;
   let mensagem = '';
   if (altura >= 1 && idade >= 3) {
-    mensagem = mensagem + 'Carrosel ';
+    mensagem += 'Carrosel\n';
+    // mensagem = mensagem + 'Carrosel ';
   }
 
   if (altura > 1.1) {
-    mensagem = mensagem + ' Montanha-russa ';
+    mensagem += 'Montanha-russa\n';
   }
 
   if (altura < 1.3 && idade >= 4 && idade <= 9) {
-    mensagem = mensagem + ' Piscina de bolinhas';
+    mensagem += 'Piscina de bolinhas\n';
   }
 
   if (mensagem === '') {
@@ -33,4 +34,6 @@ function verificaAtracoes(anoDeNascimento, altura) {
 
 const altura = Number(prompt('Entre com sua altura:'));
 const anoDeNascimento = Number(prompt('Entre com seu ano de nascimento:'));
-console.log(verificaAtracoes(anoDeNascimento, altura));
+console.log(
+  'As atrações permitidas são: \n' + verificaAtracoes(anoDeNascimento, altura)
+);
