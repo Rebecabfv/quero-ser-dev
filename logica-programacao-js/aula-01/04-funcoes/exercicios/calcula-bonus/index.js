@@ -10,29 +10,26 @@ const calculaBonus = (salario, tempoTrabalho) => {
   }
 
   if (tempoTrabalho < 1) {
-    const bonus = salario * 0;
-    return 'O valor do seu bônus anual é de: ' + bonus;
+    return 0;
   }
 
   if (tempoTrabalho >= 1 && tempoTrabalho < 4) {
-    const bonus = salario * 0.05;
-    return 'O valor do seu bônus anual é de: ' + bonus;
+    return salario * 0.05;
   }
 
   if (tempoTrabalho >= 4 && tempoTrabalho < 7) {
-    const bonus = salario * 0.1;
-    return 'O valor do seu bônus anual é de: ' + bonus;
+    return salario * 0.1;
   }
 
   if (tempoTrabalho >= 7) {
-    const bonus = salario * 0.15;
-    return 'O valor do seu bônus anual é de: ' + bonus;
+    return salario * 0.15;
   }
 };
 
 console.log(
-  calculaBonus(
-    Number(prompt('Digite o seu salário:')),
-    Number(prompt('Digite o tempo de trabalho:'))
-  )
+  'O valor do seu bônus anual é de R$: ' +
+    calculaBonus(
+      Number(prompt('Digite o seu salário:')),
+      Number(prompt('Digite o tempo de trabalho:'))
+    )
 );
