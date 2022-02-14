@@ -1,7 +1,11 @@
 let desejaContinuar = 'S';
 
-while (deveContinuarCadastro === 'S') {
-  const nome = prompt('Entre com seu nome:');
+while (desejaContinuar === 'S') {
+  let nome;
+
+  while (!nome || nome.length < 2) {
+    nome = prompt('Entre com seu nome:');
+  }
 
   alert('Olá ' + nome);
 
