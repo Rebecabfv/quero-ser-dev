@@ -1,7 +1,7 @@
 //Faça uma função que receba um número e verifique se ele é primo
 // (um número primo é apenas divisível por 1 e por ele mesmo)
 
-function verificaNumeroPrimo(num) {
+export function verificaNumeroPrimo(num) {
   if (num < 1) {
     return false;
   }

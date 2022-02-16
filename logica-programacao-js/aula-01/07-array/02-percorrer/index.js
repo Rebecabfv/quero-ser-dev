@@ -18,26 +18,7 @@
 //   console.log(aluna);
 // }
 
-function verificaNumeroPrimo(num) {
-  if (num < 1) {
-    return false;
-  }
-
-  if (num === 1 || num === 2) {
-    return true;
-  }
-
-  let divisor = 2;
-
-  while (divisor < num) {
-    if (num % divisor === 0) {
-      return false;
-    }
-    divisor += 1;
-  }
-
-  return true;
-}
+import { verificaNumeroPrimo } from '../../06-lacos-repeticao/exercio/numero-primo/index.js';
 
 const numerosTeste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 21, 53, 83];
 const numerosPrimos = [];
