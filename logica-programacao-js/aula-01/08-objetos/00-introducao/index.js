@@ -20,6 +20,7 @@ alunos.push({
 for (let aluno of alunos) {
   console.log(aluno.nome);
   console.log(aluno['idade']);
-}
 
-// Atributo e propriedade?
+  const chave = 'nome';
+  console.log(aluno[chave]);
+}
