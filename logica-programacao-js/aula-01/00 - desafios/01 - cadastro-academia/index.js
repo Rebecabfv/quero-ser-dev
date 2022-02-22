@@ -1,17 +1,4 @@
-const alunos = [
-  {
-    nome: 'Zé',
-    idade: 20,
-    cpf: '123.456.789-01',
-    email: 're',
-  },
-  {
-    nome: 'Maria',
-    idade: 27,
-    cpf: '123.456.789-02',
-    email: 'la',
-  },
-];
+const alunos = [];
 
 function menuCadastros() {
   const opcoesMenu = parseInt(
@@ -19,9 +6,9 @@ function menuCadastros() {
       'Digite qual opção você deseja:\n1 - Realizar o cadastro\n2 - Consultar alunos\n3 - Excluir aluno\n4 - Sair do menu'
     )
   );
-  //   if (opcoesMenu === 1) {
-  //     cadastro(alunos);
-  //   }
+  if (opcoesMenu === 1) {
+    cadastro(alunos);
+  }
   if (opcoesMenu === 2) {
     buscarEmail(alunos);
   }
