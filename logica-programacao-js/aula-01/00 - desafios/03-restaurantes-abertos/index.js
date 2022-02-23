@@ -23,13 +23,18 @@ const restaurantes = [
 
 function procuraRestaurante(restaurantes) {
   const horarioAtual = new Date().getHours();
-  const { nome, horario_abertura, horario_fechamento } = restaurantes;
-  const restaurantesDisponiveis = restaurantes.filter(
-    (restaurante) =>
-      restaurante.horario_abertura >= horarioAtual &&
-      restaurante.horario_fechamento > horarioAtual
-  );
-  console.log(restaurantesDisponiveis);
+  const restaurantesDisponiveis = restaurantes.filter((restaurante) => {
+    let { horario_abertura, horario_fechamento } = restaurante;
+
+    if (horario_fechamento > horario_abertura) {
+      horario_fechamento += 24;
+    }
+
+    return (
+      horarioAtual >= horario_abertura && horarioAtual < horario_fechamento
+    );
+  });
+  return restaurantesDisponiveis;
 }
 
-procuraRestaurante(restaurantes);
+console.log(procuraRestaurante(restaurantes));
