@@ -33,9 +33,7 @@ const esportes = [
 
 // 1) Encontre um esporte que é individual
 function esporteIndividual(esportes) {
-  const esporteIndividual = esportes.find(
-    (esporte) => esporte.individual === true
-  );
+  const esporteIndividual = esportes.find((esporte) => esporte.individual);
   return esporteIndividual;
 }
 console.log(esporteIndividual(esportes));
@@ -52,7 +50,7 @@ console.log(duracaoEstimada(esportes));
 // 3) Encontre todos esportes individuais com duração superior a 20 mins
 function duracaoSuperior(esportes) {
   const durancaoSuperior20 = esportes.filter(
-    (esporte) => esporte.duracaoEstimadaEmMinutos > 20
+    (esporte) => esporte.individual && esporte.duracaoEstimadaEmMinutos > 20
   );
   return durancaoSuperior20;
 }
