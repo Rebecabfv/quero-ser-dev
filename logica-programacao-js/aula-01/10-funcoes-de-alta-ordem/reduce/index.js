@@ -16,21 +16,8 @@ const alunas = [
   },
 ];
 
-function calculaMedia(alunos = []) {
-  const aluno = alunos.map((aluno) => {
-    const soma = aluno.notas.reduce((somaAtual, nota, indice, arrayInteiro) => {
-      return somaAtual + nota;
-    }, 0);
-
-    const media = soma / aluno.notas.length;
-
-    return {
-      ...aluno,
-      media,
-    };
-  });
-
-  return aluno;
-}
-
-console.log(calculaMedia(alunas));
+const aluno = alunas.map((aluno) => {
+  const soma = aluno.notas.reduce((somaAtual, nota, indice, arrayInteiro) => {
+    return somaAtual + nota;
+  }, 0);
+});
