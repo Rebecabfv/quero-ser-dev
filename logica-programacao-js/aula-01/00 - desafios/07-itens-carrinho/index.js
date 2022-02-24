@@ -31,18 +31,13 @@ const carrinho = [
   },
 ];
 
-// const totalAPagar = impostos.reduce((soma, imposto) => {
-//   console.log(soma);
-//   return soma + imposto.valor;
-// }, 1);
-
-const somaTotal = carrinho.reduce((taxa, valor) => {
-  return taxa + valor.valorDaUnidade;
+const somaTotal = carrinho.reduce((taxa, produto) => {
+  return taxa + produto.valorDaUnidade * produto.quantidade;
 }, 15);
-console.log(somaTotal);
 
-// const aluno = alunas.map((aluno) => {
-//   const soma = aluno.notas.reduce((somaAtual, nota, indice, arrayInteiro) => {
-//     return somaAtual + nota;
-//   }, 0);
-// });
+const totalFormatado = somaTotal.toLocaleString('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+});
+
+console.log(totalFormatado);

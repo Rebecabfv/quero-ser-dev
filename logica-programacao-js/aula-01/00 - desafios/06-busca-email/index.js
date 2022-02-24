@@ -34,10 +34,11 @@ const usuarios = [
 function encontreEmail(usuarios) {
   const emailDesejado = prompt('Digite o email que deseja buscar:');
   const usuarioEncontrado = usuarios.find(
-    (usuario) => usuario.email === emailDesejado
+    (usuario) => usuario.email === emailDesejado.toLocaleLowerCase()
   );
   if (!usuarioEncontrado) {
-    return 'Email nao existe';
+    alert('Email nao existe');
+    return;
   }
   return usuarioEncontrado;
 }
