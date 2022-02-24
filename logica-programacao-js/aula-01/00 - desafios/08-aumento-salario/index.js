@@ -1,0 +1,69 @@
+const funcionarios = [
+  {
+    nome: 'Renata',
+    area: 'Vendas',
+    salario: 3000,
+  },
+  {
+    nome: 'Marcela',
+    area: 'Dev',
+    salario: 8000,
+  },
+  {
+    nome: 'Jonas',
+    area: 'Vendas',
+    salario: 3500,
+  },
+  {
+    nome: 'Carlos',
+    area: 'Vendas',
+    salario: 2000,
+  },
+  {
+    nome: 'Rick',
+    area: 'Dev',
+    salario: 7000,
+  },
+  {
+    nome: 'Yara',
+    area: 'Finanças',
+    salario: 6500,
+  },
+  {
+    nome: 'Zeca',
+    area: 'Finanças',
+    salario: 5500,
+  },
+  {
+    nome: 'Josué',
+    area: 'RH',
+    salario: 4500,
+  },
+  {
+    nome: 'Sheila',
+    area: 'RH',
+    salario: 5500,
+  },
+  {
+    nome: 'Cleber',
+    area: 'Finanças',
+    salario: 4500,
+  },
+];
+
+const areaDesejada = prompt('Digite a área desejada');
+
+const funcionariosDaArea = funcionarios.filter(
+  (area) => area.area === areaDesejada
+);
+
+const aumentoFuncionarios = funcionariosDaArea.map((funcionario) => {
+  const salario = funcionario.salario * 0.05 + funcionario.salario;
+  return {
+    ...funcionario,
+    salario,
+  };
+});
+
+console.log(funcionariosDaArea);
+console.log(aumentoFuncionarios);
