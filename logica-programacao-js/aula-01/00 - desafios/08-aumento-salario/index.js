@@ -65,5 +65,24 @@ const aumentoFuncionarios = funcionariosDaArea.map((funcionario) => {
   };
 });
 
+// const areaParaAumentarSalario = "Vendas"
+
+// const funcionariosComSalarioAjustado = funcionarios.map((funcionario) => {
+//   return {
+//     ...funcionario,
+//     salario:
+//     funcionario.area.toLowerCase() === areaParaAumentarSalario.toLowerCase()
+//     ? (funcionario.salario) * 1.05
+//     : funcionario.salario
+//   }
+// })
+
+// // console.log(funcionariosComSalarioAjustado)
+
+// const apenasFuncionariosComReajuste = funcionariosComSalarioAjustado.filter(
+//   (funcionario) => {
+//     return funcionario.area === areaParaAumentarSalario
+// })
+
 console.log(funcionariosDaArea);
 console.log(aumentoFuncionarios);

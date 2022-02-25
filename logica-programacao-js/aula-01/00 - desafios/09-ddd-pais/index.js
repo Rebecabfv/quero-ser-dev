@@ -54,4 +54,12 @@ const telefoneComDdd = telefones.map((contato) => {
     numero,
   };
 });
+
+// const telefonesComDDI = telefones.map((telefone) => {
+//   return {
+//     ...telefone,
+//     numero: '+' + ddi[telefone.pais] + telefone.numero
+//   }
+// })
+
 console.log(telefoneComDdd);
