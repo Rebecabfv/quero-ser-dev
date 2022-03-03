@@ -8,6 +8,9 @@ const tv = {
   liga() {
     this.ligada = true;
   },
+  desliga() {
+    this.ligada = falso;
+  },
   mudaDeCanal (){
     this.canel = "SBT";
   },
