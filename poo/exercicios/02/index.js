@@ -7,7 +7,8 @@ const tv = {
     2: "SBT",
     3: "Band",
   },
-  volume: 20,
+  volume: 0,
+  // volumeMaximo: 100,
   ligada: true,
   liga() {
     this.ligada = true;
@@ -16,17 +17,28 @@ const tv = {
     this.ligada = false;
   },
   mudaDeCanal(canal) {
-    if (this.liga) {
+    if (!this.ligada) {
       console.log("TV está desligada, não sendo possível alterar o canal.");
       return;
     }
     this.canal = this.canal[canal];
   },
-  aumentaVolume() {
-    this.volume += 2;
+  aumentaVolume(incrementa = 1) {
+    if (!this.ligada) {
+      return;
+    }
+    if (this.volume + incrementa < 100) {
+      this.volume += incrementa;
+    }
   },
-  diminuiVolume() {
-    this.volume -= 2;
+  diminuiVolume(decremento = 1) {
+    if (!this.ligada) {
+      return;
+    }
+
+    if (this.volume - decremento > 0) {
+      this.volume -= decremento;
+    }
   },
 };
 
