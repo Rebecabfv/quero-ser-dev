@@ -18,3 +18,24 @@
 // Até 2 horas: R$ 8,00
 // Até 3 horas: R$ 12,00
 // A partir de 3 horas: R$ 12,00 + R$ 2,50 por hora adicional
+
+const placas = [
+  {
+    placa: 9876,
+  },
+  {
+    placa: 4567,
+  },
+];
+
+const placaDesejada = prompt('Placa do carro:').toUpperCase();
+
+const verificaPlaca = placas.filter((placa) => {
+  if (placa.placa !== placaDesejada) {
+    console.log(`Entrada do veículo de placa: ${placa}`);
+    return;
+  }
+  return `Saída do veículo de placa: ${placa} /n Tempo no estabelecimento: TEMPO /n Valor cobrado: VALOR`;
+});
+
+console.log(verificaPlaca);
