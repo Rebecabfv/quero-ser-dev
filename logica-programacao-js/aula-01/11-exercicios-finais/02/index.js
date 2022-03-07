@@ -22,80 +22,83 @@ while (desejaContinuar === 'S') {
 
   let partidaComputador = '';
 
-  if (resultado == 0) {
+  if (resultado === 0) {
     partidaComputador = 'pedra';
   }
-  if (resultado == 1) {
+  if (resultado === 1) {
     partidaComputador = 'tesoura';
   }
-  if (resultado == 2) {
+  if (resultado === 2) {
     partidaComputador = 'papel';
   }
 
-  console.log(partidaComputador);
+  // console.log(partidaComputador);
 
   if (seuDesejo == partidaComputador) {
     alert('Houve empate! Você e o computador escolheram ' + seuDesejo);
   }
 
-  if (seuDesejo == 'pedra' && partidaComputador == 'tesoura') {
-    placarUsuario += 1;
-    alert(
-      'Você venceu! Placar usuário: ' +
-        placarUsuario +
-        ' Placar PC: ' +
-        placarPc
-    );
+  if (seuDesejo === 'pedra') {
+    if (partidaComputador === 'tesoura') {
+      placarUsuario += 1;
+      alert(
+        'Você venceu! Placar usuário: ' +
+          placarUsuario +
+          ' Placar PC: ' +
+          placarPc
+      );
+    }
+    if (partidaComputador === 'papel') {
+      placarPc += 1;
+      alert(
+        'Você perdeu! Placar usuário: ' +
+          placarUsuario +
+          ' Placar PC: ' +
+          placarPc
+      );
+    }
   }
 
-  if (seuDesejo == 'papel' && partidaComputador == 'pedra') {
-    placarUsuario += 1;
-    alert(
-      'Você venceu! Placar usuário: ' +
-        placarUsuario +
-        ' Placar PC: ' +
-        placarPc
-    );
+  if (seuDesejo === 'papel') {
+    if (partidaComputador === 'pedra') {
+      placarUsuario += 1;
+      alert(
+        'Você venceu! Placar usuário: ' +
+          placarUsuario +
+          ' Placar PC: ' +
+          placarPc
+      );
+    }
+    if (partidaComputador === 'tesoura') {
+      placarPc += 1;
+      alert(
+        'Você perdeu! Placar usuário: ' +
+          placarUsuario +
+          ' Placar PC: ' +
+          placarPc
+      );
+    }
   }
 
-  if (seuDesejo == 'tesoura' && partidaComputador == 'papel') {
-    placarUsuario += 1;
-    alert(
-      'Você venceu! Placar usuário: ' +
-        placarUsuario +
-        ' Placar PC: ' +
-        placarPc
-    );
-  }
-
-  if (partidaComputador == 'pedra' && seuDesejo == 'tesoura') {
-    placarPc += 1;
-    alert(
-      'Você perdeu! Placar usuário: ' +
-        placarUsuario +
-        ' Placar PC: ' +
-        placarPc
-    );
-  }
-
-  if (partidaComputador == 'papel' && seuDesejo == 'pedra') {
-    placarPc += 1;
-    alert(
-      'Você perdeu! Placar usuário: ' +
-        placarUsuario +
-        ' Placar PC: ' +
-        placarPc
-    );
-  }
-
-  if (partidaComputador == 'tesoura' && seuDesejo == 'papel') {
-    placarPc += 1;
-    alert(
-      'Você perdeu! Placar usuário: ' +
-        placarUsuario +
-        ' Placar PC: ' +
-        placarPc
-    );
+  if (seuDesejo === 'tesoura') {
+    if (partidaComputador === 'papel') {
+      placarUsuario += 1;
+      alert(
+        'Você venceu! Placar usuário: ' +
+          placarUsuario +
+          ' Placar PC: ' +
+          placarPc
+      );
+    }
+    if (partidaComputador === 'pedra') {
+      placarPc += 1;
+      alert(
+        'Você perdeu! Placar usuário: ' +
+          placarUsuario +
+          ' Placar PC: ' +
+          placarPc
+      );
+    }
   }
 
   desejaContinuar = prompt('Deseja continuar? S/N').toUpperCase();
@@ -109,7 +112,7 @@ while (desejaContinuar === 'S') {
           placarPc
       );
     }
-    if (placarUsuario == placarPc) {
+    if (placarUsuario === placarPc) {
       alert(
         'Houve empate no jogo! Placar usuário: ' +
           placarUsuario +
