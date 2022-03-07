@@ -6,6 +6,10 @@ const nome = {
   get primeiroNome() {
     return this.nomeCompleto.split(" ")[0];
   },
+  get ultimoNome() {
+    return this.nomeCompleto.split(" ").reverse()[0];
+  },
 };
 
 console.log(nome.primeiroNome);
+console.log(nome.ultimoNome);
