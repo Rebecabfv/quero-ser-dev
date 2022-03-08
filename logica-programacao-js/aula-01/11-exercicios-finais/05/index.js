@@ -21,63 +21,72 @@
 
 const placas = [
   {
-    placa: 'A123',
-    valor: 0,
-    tempo: 0,
+    placa: 'OPO4570',
+    horarioInicial: 6,
   },
   {
-    placa: 'B123',
-    valor: 10,
-    tempo: 2,
+    placa: 'EDO7856',
+    horarioInicial: 8,
   },
 ];
 
-const placaDesejada = prompt('Placa do carro:').toUpperCase();
+let desejaContinuar = 'S';
 
-function cadastraTempo(tempo) {
-  let valor = 0;
-  if (tempo <= 1) {
-    return (valor = 5);
+while (desejaContinuar === 'S') {
+  const placaDesejada = prompt('Placa do carro:').toUpperCase();
+
+  function cadastraTempo(tempo) {
+    let valor = 0;
+    if (tempo <= 1) {
+      return (valor = 5);
+    }
+    if (tempo <= 2) {
+      return (valor = 8);
+    }
+    if (tempo <= 3) {
+      return (valor = 12);
+    }
+    if (tempo > 4) {
+      const horaAdicional = (tempo - 3) * 2.5;
+      return (valor = 12 + horaAdicional);
+    }
   }
-  if (tempo <= 2) {
-    return (valor = 8);
-  }
-  if (tempo <= 3) {
-    return (valor = 12);
-  }
-  if (tempo > 4) {
-    const horaAdicional = (tempo - 3) * 2.5;
-    return (valor = 12 + horaAdicional);
-  }
-}
 
-const procuraPlaca = placas.find((placa) => placa.placa === placaDesejada);
+  const procuraPlaca = placas.find((placa) => placa.placa === placaDesejada);
 
-const carroEstacionado = placas.map((veiculo) => {
-  if (veiculo.placa === placaDesejada) {
-    const horarioInicial = 4;
-    const horarioFinal = 6;
-    const tempo = horarioFinal - horarioInicial;
+  const carroEstacionado = placas.map((veiculo) => {
+    if (veiculo.placa === placaDesejada) {
+      const horarioFinal = parseInt(
+        prompt('Digite o horario de saída (em horas): ')
+      );
+      const tempo = horarioFinal - veiculo.horarioInicial;
 
-    veiculo = {
-      ...veiculo,
-      valor: cadastraTempo(tempo),
-      tempo: tempo,
-    };
+      veiculo = {
+        ...veiculo,
+        valor: cadastraTempo(tempo),
+        tempo: tempo,
+      };
 
-    const mensagem = console.log(
-      ` - Saída do veículo de placa: ${veiculo.placa} \n - Tempo no estabelecimento:  ${veiculo.tempo} horas\n - Valor cobrado:  ${veiculo.valor}`
-    );
-    return mensagem;
-  }
-});
-
-if (procuraPlaca === undefined) {
-  const horarioInicial = 5;
-  placas.push({
-    placa: placaDesejada,
-    horarioInicial: horarioInicial,
+      const mensagem = console.log(
+        ` - Saída do veículo de placa: ${veiculo.placa} \n - Tempo no estabelecimento:  ${veiculo.tempo} horas\n - Valor cobrado: R$ ${veiculo.valor}`
+      );
+      return mensagem;
+    }
   });
-}
 
-console.log(placas);
+  if (procuraPlaca === undefined) {
+    const horarioInicial = parseInt(
+      prompt('Digite o horario de entrada (em horas): ')
+    );
+    placas.push({
+      placa: placaDesejada,
+      horarioInicial: horarioInicial,
+    });
+  }
+
+  console.log(placas);
+  console.log(carroEstacionado);
+  desejaContinuar = prompt(
+    'Deseja dar entrada ou saída de outro veiculo? S/N'
+  ).toLocaleUpperCase();
+}
