@@ -16,3 +16,27 @@ if (mensagem === '') {
 }
 
 console.log(mensagem);
+
+// let entradaUser = [];
+// let tamanhoArray = 10;
+
+// //preencher o array entradaUser com os números digitados pelo usuário
+// for (let i = 0; i < tamanhoArray; i++) {
+//   entradaUser[i] = parseInt(
+//     prompt('Digite 10 números em sequência: ' + (i + 1))
+//   );
+// }
+// console.log(entradaUser);
+
+// //verificar se algum número está em sequência com filter que retornará um booleano.
+
+// const numeroRepetido = entradaUser.filter((numero, i) => {
+//   let indice = i - 1;
+//   return numero === entradaUser[i - 1];
+// });
+
+// console.log(numeroRepetido);
+
+// if (numeroRepetido) {
+//   console.log('O número ' + numeroRepetido + ' foi repetido em sequência');
+// }
