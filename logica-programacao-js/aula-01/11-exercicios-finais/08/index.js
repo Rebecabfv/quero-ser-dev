@@ -12,57 +12,52 @@
 // Matemática: 9, 7, 7;
 // Física: 5, 5, 8;
 
-// nome: 'Joana',
-// materias: {
-
-// },
-// historia: [9, 5, 6],
-// matematica: [3, 7, 8],
-// fisica: [10, 10, 6],
-
 const alunas = [
   {
     nome: 'Joana',
-    materias: [
-      {
-        historia: [9, 5, 6],
-      },
-      {
-        matematica: [3, 7, 8],
-      },
-      {
-        fisica: [10, 10, 6],
-      },
-    ],
+    historia: [9, 5, 6],
+    matematica: [3, 7, 8],
+    fisica: [10, 10, 6],
   },
-  // {
-  //   nome: 'Bia',
-  //   historia: [6, 5, 6],
-  //   matematica: [7, 7, 8],
-  //   fisica: [8, 6, 9],
-  // },
+  {
+    nome: 'Bia',
+    historia: [6, 5, 6],
+    matematica: [7, 7, 8],
+    fisica: [8, 6, 9],
+  },
+  {
+    nome: 'Renata',
+    historia: [8, 7, 9],
+    matematica: [9, 7, 7],
+    fisica: [5, 5, 8],
+  },
 ];
 
-const alunasComMedia = alunas.map((aluna, indice) => {
-  console.log(alunas[indice].materias);
+const alunasComMedia = alunas.map((aluna) => {
+  const somaHistoria = aluna['historia'].reduce((somaAtual, nota) => {
+    return somaAtual + nota;
+  }, 0);
 
-  // const soma = aluna[indice].materias[indice].reduce(
-  //   (somaAtual, nota, indice, arrayInteiro) => {
-  //     return somaAtual + nota;
-  //   },
-  //   0
-  // );
+  const mediaHistoria = somaHistoria / aluna['historia'].length;
 
-  const media = 3;
+  const somaMatematica = aluna['matematica'].reduce((somaAtual, nota) => {
+    return somaAtual + nota;
+  }, 0);
 
-  const { nome, materias } = aluna;
+  const mediaMatematica = somaMatematica / aluna['matematica'].length;
+
+  const somaFisica = aluna['fisica'].reduce((somaAtual, nota) => {
+    return somaAtual + nota;
+  }, 0);
+
+  const mediaFisica = somaFisica / aluna['fisica'].length;
+
   return {
     ...aluna,
-    materias: [{ ...materias[indice], media }],
+    mediaFisica: mediaFisica,
+    mediaHistoria: mediaHistoria,
+    mediaMatematica: mediaMatematica,
   };
-  // console.log(soma);
-
-  // console.log(media);
 });
 
 console.log(alunasComMedia);
