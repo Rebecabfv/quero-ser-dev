@@ -1,19 +1,3 @@
-// b) Encontre todos os animais com menos de 18 meses.
-
-// c) Faça um novo array que agrupe a quantidade de animais por especie. Exemplo:
-
-// [
-//     {
-//     especie: 'gato',
-//     quantidade: 3
-//   },
-//   {
-//     especie: 'coelho',
-//     quantidade: 1
-//   },
-//     ...
-// ]
-
 const animais = [
   {
     nome: 'Laranja',
@@ -123,19 +107,73 @@ const animais = [
 ];
 
 // a) Calcule a idade média dos animais.
-// const { idadeEmMeses } = animais;
-// const somaAnimais = idadeEmMeses.reduce((valorInicial, soma) => {
-//   return valorInicial + soma;
-// }, 0);
 
-// console.log(somaAnimais);
+const todasIdade = [];
+const agrupaIdades = animais.map((animal) => {
+  todasIdade.push(animal['idadeEmMeses']);
 
-const animal = animais.map((animal) => {
-  const soma = animal.idadeEmMeses.reduce(
-    (somaAtual, nota, indice, arrayInteiro) => {
-      return somaAtual + nota;
-    },
-    0
-  );
-  console.log(soma);
+  return todasIdade;
 });
+
+const soma = todasIdade.reduce((somaAtual, nota, indice, arrayInteiro) => {
+  return somaAtual + nota;
+}, 0);
+
+const media = soma / todasIdade.length;
+
+console.log('Media das idade dos animais em meses: ' + media);
+
+// // b) Encontre todos os animais com menos de 18 meses.
+
+const animaisComMenos18Meses = animais.filter(
+  (animal) => animal.idadeEmMeses < 18
+);
+console.log(animaisComMenos18Meses);
+
+// c) Faça um novo array que agrupe a quantidade de animais por especie. Exemplo:
+
+// [
+//     {
+//     especie: 'gato',
+//     quantidade: 3
+//   },
+//   {
+//     especie: 'coelho',
+//     quantidade: 1
+//   },
+//     ...
+// ]
+
+const contagemAnimimal = [];
+
+// retorna uma array com a especie e a quantidade de todos os animais
+const somaQuantidadeAnimais = animais.map((animal) => {
+  if (contagemAnimimal[animal['especie']]) {
+    contagemAnimimal[animal['especie']] =
+      contagemAnimimal[animal['especie']] + 1;
+
+    return {
+      especie: animal['especie'],
+      quantidade: contagemAnimimal[animal['especie']],
+    };
+  } else {
+    contagemAnimimal[animal['especie']] = 1;
+    return {
+      especie: animal['especie'],
+      quantidade: contagemAnimimal[animal['especie']],
+    };
+  }
+});
+
+somaQuantidadeAnimais.reverse();
+
+const final = [];
+const agrupaAnimais = somaQuantidadeAnimais.map((animal) => {
+  if (final[animal['especie']]) {
+    return;
+  } else {
+    final[animal['especie']] = animal;
+  }
+});
+
+console.log(final);
