@@ -52,11 +52,49 @@ function cadastro(alunos) {
     const nome = prompt('Nome:');
     const email = prompt('E-mail:');
     const age = parseInt(prompt('Idade:'));
-    const activities = prompt(
-      'Atividades: \n- Musculação 🏋️‍♀️ R$120,00 \n- Esteira🏃 R$40,00 \n - Natação 🏊‍♀️ R$50,00\n - Judô 🥋 R$90,00'
-    );
 
-    alunos.push({ nome, email, age, activities });
+    let desejaCadastrarOutraAtividade = 'S';
+    let activities = [];
+    while (desejaCadastrarOutraAtividade === 'S') {
+      let activitiesEscolhido = parseInt(
+        prompt(
+          'Atividades: (digite apenas uma por vez) \n 1 - Musculação 🏋️‍♀️ R$120,00 \n 2 - Esteira🏃 R$40,00 \n 3 - Natação 🏊‍♀️ R$50,00\n 4 - Judô 🥋 R$90,00'
+        )
+      );
+
+      if (age < 14 && activitiesEscolhido === 1) {
+        console.log('Menores de 14 anos não podem fazer musculação');
+        cadastro(alunos);
+        return;
+      }
+
+      if (activities.length === 0) {
+        activities.push(activitiesEscolhido);
+      } else {
+        const verificaMuscularcaoEEsteira = activities.map((atividade) => {
+          if (
+            (atividade === 1 && activitiesEscolhido === 2) ||
+            (atividade === 2 && activitiesEscolhido === 1)
+          ) {
+            console.log(
+              'Esteira não pode acontecer junto com musculação, pois já está inclusa nessa categoria'
+            );
+            return;
+          }
+          return 1;
+        });
+
+        if (verificaMuscularcaoEEsteira[0] === 1) {
+          activities.push(activitiesEscolhido);
+        }
+      }
+
+      desejaCadastrarOutraAtividade = prompt(
+        'Deseja cadastrar outra atividade? S/N'
+      ).toUpperCase();
+    }
+
+    alunos.push({ nome, email, age, activities: activities });
 
     desejaContinuar = prompt(
       'Deseja realizar outro cadastro? S/N'
@@ -71,6 +109,7 @@ function cadastro(alunos) {
 
 function buscarEmail(alunos) {
   const emailDesejado = prompt('Digite o email de busca:');
+
   const procuraEmail = alunos.filter(
     (alunos) => alunos.email === emailDesejado
   );
@@ -94,4 +133,5 @@ function remocaoAluno(alunos) {
   return alunos;
 }
 
-console.log(menuCadastros());
+menuCadastros();
+console.log(alunos);
