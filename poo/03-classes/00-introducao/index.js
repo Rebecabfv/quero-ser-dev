@@ -13,10 +13,13 @@ class Pessoa {
   }
 }
 
+// Instância:
 const pessoa1 = new Pessoa(
   "Rebeca Baptista Fonseca Viana",
   "re.bfviana@gmail.com"
 );
+
+// Instância:
 const pessoa2 = new Pessoa(
   "Roberta Baptista Fonseca Viana",
   "ro.bfviana@gmail.com"
