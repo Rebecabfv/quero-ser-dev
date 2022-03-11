@@ -8,6 +8,10 @@
 
 class CNH {
   #categoriaExistente;
+  #idade;
+  #idadesMinimasPorPais;
+  #categoria;
+
   constructor(pais, idade, categoria) {
     this.#categoriaExistente = [
       "A",
@@ -20,34 +24,56 @@ class CNH {
       "AD",
       "AE",
     ];
+    this.#idadesMinimasPorPais = {
+      BR: 18,
+      CA: 16,
+      CH: 21,
+      US: 16,
+      RU: 21,
+    };
     this.pais = pais;
-    this.pais === "BR" && idade >= 18
-      ? (this.categoria = this.#validaCategoria(categoria))
-      : "Não necessita de categoria";
-    this.idade = this.#validaIdade(pais, idade);
+    this.idade = idade;
+    this.categoria = categoria;
+
+    // this.pais === "BR" && idade >= 18
+    //   ? (this.categoria = categoria)
+    //   : "Não necessita de categoria";
   }
 
-  #validaCategoria(categoria) {
-    const verificaCategoria = this.#categoriaExistente.includes(categoria)
-      ? categoria
-      : "Categoria inválida";
-
-    return verificaCategoria;
+  get idade() {
+    return this.#idade;
   }
 
-  #validaIdade(pais, idade) {
-    if (idade >= 16 && (pais == "US" || pais == "CA")) {
-      return idade;
-    }
-    if (idade >= 18 && (pais !== "CH" || pais !== "RU")) {
-      return idade;
-    }
-    if (idade >= 21 && (pais == "CH" || pais == "RU")) {
-      return idade;
-    }
-    return "Idade não pode ter cnh";
+  set idade(idadeNova) {
+    const idadeMinimaEncontradaOuValorPadrao = this.#idadesMinimasPorPais[
+      this.pais
+    ]
+      ? this.#idadesMinimasPorPais[this.pais]
+      : 18;
+
+    this.#idade =
+      idadeNova >= idadeMinimaEncontradaOuValorPadrao
+        ? idadeNova
+        : "idade inválida";
+  }
+
+  get categoria() {
+    return this.#categoria;
+  }
+
+  set categoria(categoria) {
+    // const verificaCategoria = this.#categoriaExistente.includes(categoria)
+    //   ? categoria
+    //   : "Categoria inválida";
+
+    this.#categoria =
+      this.pais === "BR" && this.#idade >= 18
+        ? this.#categoriaExistente.includes(categoria)
+          ? categoria
+          : "Categoria inválida"
+        : "Não necessita de categoria";
   }
 }
 
-const motorista = new CNH("BR", 20, "D");
+const motorista = new CNH("CA", 19, "AB");
 console.log(motorista);
