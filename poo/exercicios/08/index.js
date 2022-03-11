@@ -9,7 +9,7 @@ class Time {
     this.pontuacao = pontuacao;
   }
 
-  adicionaPontuacao(condicaoDoJogo) {
+  pontua(condicaoDoJogo) {
     //  "W" para vitória (+3 pontos), "L" para derrota (+0 pontos) e "D" para empate (+1 ponto).
     if (condicaoDoJogo === "W") {
       this.pontuacao += 3;
@@ -27,3 +27,9 @@ class Time {
     return;
   }
 }
+
+const brasil = new Time("Brasil", "futebol", 14);
+console.log(brasil);
+
+brasil.pontua("W");
+console.log(brasil);
