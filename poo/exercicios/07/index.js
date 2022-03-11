@@ -1,4 +1,7 @@
 class Carro {
+  #modelo;
+  #tipoDeCombustível;
+
   constructor(
     cor,
     marca,
@@ -9,13 +12,29 @@ class Carro {
   ) {
     this.cor = cor;
     this.marca = marca;
-    this.modelo =
+    this.modelo = modelo;
+    this.capacidadeDoTanque = capacidadeDoTanque;
+    this.volumeAtualEmTanque = volumeAtualEmTanque;
+    this.tipoDeCombustível = tipoDeCombustível;
+  }
+
+  get modelo() {
+    return this.#modelo;
+  }
+
+  set modelo(modelo) {
+    this.#modelo =
       modelo === "sedan" || modelo === "hatch"
         ? modelo
         : "Digite um modelo válido";
-    this.capacidadeDoTanque = capacidadeDoTanque;
-    this.volumeAtualEmTanque = volumeAtualEmTanque;
-    this.tipoDeCombustível =
+  }
+
+  get tipoDeCombustível() {
+    return this.#tipoDeCombustível;
+  }
+
+  set tipoDeCombustível(tipoDeCombustível) {
+    this.#tipoDeCombustível =
       tipoDeCombustível === "gasolina" ||
       tipoDeCombustível === "alcool" ||
       tipoDeCombustível === "flex"
@@ -27,13 +46,15 @@ class Carro {
     // método abastecer que respeite o tipo de combustível que o automóvel
     // aceita e a capacidade máxima de litros.
 
-    if (tipoDeCombustível === this.tipoDeCombustível) {
+    if (tipoDeCombustível === this.#tipoDeCombustível) {
       const quantidadeQuePodeAbastecer =
         this.capacidadeDoTanque - this.volumeAtualEmTanque;
       if (quantidadeParaAbastecer <= quantidadeQuePodeAbastecer) {
-        return (this.volumeAtualEmTanque += quantidadeParaAbastecer);
+        this.volumeAtualEmTanque += quantidadeParaAbastecer;
+        return;
       }
-      return this.volumeAtualEmTanque;
+      this.volumeAtualEmTanque = this.volumeAtualEmTanque;
+      return;
     }
     return;
   }
@@ -51,10 +72,13 @@ class Carro {
   }
 }
 
-const carroSedan = new Carro("rosa", "KA", "sedan", 30, 20, "gasolina");
+const carroSedan = new Carro("rosa", "KA", "sedan", 30, 0, "gasolina");
 console.log(carroSedan);
 
-carroSedan.abastecer(5, "gasolina");
+carroSedan.abastecer(10, "gasolina");
 console.log(carroSedan);
+
+// carroSedan.abastecer(30, "gasolina");
+// console.log(carroSedan);
 
 console.log(carroSedan.calculaPrecoAbastecimento(10, "alcool"));
