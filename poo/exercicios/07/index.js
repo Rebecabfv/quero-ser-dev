@@ -1,6 +1,6 @@
 class Carro {
   #modelo;
-  #tipoDeCombustível;
+  #tipoDeCombustivel;
 
   constructor(
     cor,
@@ -8,14 +8,14 @@ class Carro {
     modelo,
     capacidadeDoTanque,
     volumeAtualEmTanque,
-    tipoDeCombustível
+    tipoDeCombustivel
   ) {
     this.cor = cor;
     this.marca = marca;
     this.modelo = modelo;
     this.capacidadeDoTanque = capacidadeDoTanque;
     this.volumeAtualEmTanque = volumeAtualEmTanque;
-    this.tipoDeCombustível = tipoDeCombustível;
+    this.tipoDeCombustivel = tipoDeCombustivel;
   }
 
   get modelo() {
@@ -29,24 +29,24 @@ class Carro {
         : "Digite um modelo válido";
   }
 
-  get tipoDeCombustível() {
-    return this.#tipoDeCombustível;
+  get tipoDeCombustivel() {
+    return this.#tipoDeCombustivel;
   }
 
-  set tipoDeCombustível(tipoDeCombustível) {
-    this.#tipoDeCombustível =
-      tipoDeCombustível === "gasolina" ||
-      tipoDeCombustível === "alcool" ||
-      tipoDeCombustível === "flex"
-        ? tipoDeCombustível
+  set tipoDeCombustivel(tipoDeCombustivel) {
+    this.#tipoDeCombustivel =
+      tipoDeCombustivel === "gasolina" ||
+      tipoDeCombustivel === "alcool" ||
+      tipoDeCombustivel === "flex"
+        ? tipoDeCombustivel
         : "Digite um tipo de combustível válido (gasolina, alcool ou flex)";
   }
 
-  abastecer(quantidadeParaAbastecer, tipoDeCombustível) {
+  abastecer(quantidadeParaAbastecer, tipoDeCombustivel) {
     // método abastecer que respeite o tipo de combustível que o automóvel
     // aceita e a capacidade máxima de litros.
 
-    if (tipoDeCombustível === this.#tipoDeCombustível) {
+    if (tipoDeCombustivel === this.#tipoDeCombustivel) {
       const quantidadeQuePodeAbastecer =
         this.capacidadeDoTanque - this.volumeAtualEmTanque;
       if (quantidadeParaAbastecer <= quantidadeQuePodeAbastecer) {
@@ -59,12 +59,12 @@ class Carro {
     return;
   }
 
-  calculaPrecoAbastecimento(quantidadeParaAbastecer, tipoDeCombustível) {
-    if (tipoDeCombustível === "gasolina") {
+  calculaPrecoAbastecimento(quantidadeParaAbastecer, tipoDeCombustivel) {
+    if (tipoDeCombustivel === "gasolina") {
       const precoGasolina = quantidadeParaAbastecer * 5.62;
       return precoGasolina;
     }
-    if (tipoDeCombustível === "alcool") {
+    if (tipoDeCombustivel === "alcool") {
       const precoAlcool = quantidadeParaAbastecer * 4.16;
       return precoAlcool;
     }
