@@ -1,6 +1,8 @@
 class Carro {
   #modelo;
   #tipoDeCombustivel;
+  #tipoDeCombustivelDisponivel;
+  #modeloDisponivel;
 
   constructor(
     cor,
@@ -13,9 +15,11 @@ class Carro {
     this.cor = cor;
     this.marca = marca;
     this.modelo = modelo;
+    this.#modeloDisponivel = ["sedan", "hatch"];
     this.capacidadeDoTanque = capacidadeDoTanque;
     this.volumeAtualEmTanque = volumeAtualEmTanque;
     this.tipoDeCombustivel = tipoDeCombustivel;
+    this.#tipoDeCombustivelDisponivel = ["gasolina", "alcool", "flex"];
   }
 
   get modelo() {
@@ -23,10 +27,9 @@ class Carro {
   }
 
   set modelo(modelo) {
-    this.#modelo =
-      modelo === "sedan" || modelo === "hatch"
-        ? modelo
-        : "Digite um modelo válido";
+    this.#modelo = this.#modeloDisponivel.includes(modelo)
+      ? modelo
+      : "Digite um modelo válido";
   }
 
   get tipoDeCombustivel() {
@@ -34,12 +37,11 @@ class Carro {
   }
 
   set tipoDeCombustivel(tipoDeCombustivel) {
-    this.#tipoDeCombustivel =
-      tipoDeCombustivel === "gasolina" ||
-      tipoDeCombustivel === "alcool" ||
-      tipoDeCombustivel === "flex"
-        ? tipoDeCombustivel
-        : "Digite um tipo de combustível válido (gasolina, alcool ou flex)";
+    this.#tipoDeCombustivel = this.#tipoDeCombustivelDisponivel.includes(
+      tipoDeCombustivel
+    )
+      ? tipoDeCombustivel
+      : "Digite um tipo de combustível válido (gasolina, alcool ou flex)";
   }
 
   abastecer(quantidadeParaAbastecer, tipoDeCombustivel) {
