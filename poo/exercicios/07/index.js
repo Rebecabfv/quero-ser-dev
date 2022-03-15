@@ -3,6 +3,8 @@ class Carro {
   #tipoDeCombustivel;
   #tipoDeCombustivelDisponivel;
   #modeloDisponivel;
+  #volumeAtualEmTanque;
+  #precosPorLitro;
 
   constructor(
     cor,
@@ -12,14 +14,18 @@ class Carro {
     volumeAtualEmTanque,
     tipoDeCombustivel
   ) {
+    this.#modeloDisponivel = ["sedan", "hatch"];
+    this.#tipoDeCombustivelDisponivel = ["gasolina", "alcool", "flex"];
+    this.#precosPorLitro = {
+      gasolina: 5.62,
+      alcool: 4.16,
+    };
     this.cor = cor;
     this.marca = marca;
     this.modelo = modelo;
-    this.#modeloDisponivel = ["sedan", "hatch"];
     this.capacidadeDoTanque = capacidadeDoTanque;
     this.volumeAtualEmTanque = volumeAtualEmTanque;
     this.tipoDeCombustivel = tipoDeCombustivel;
-    this.#tipoDeCombustivelDisponivel = ["gasolina", "alcool", "flex"];
   }
 
   get modelo() {
@@ -44,15 +50,27 @@ class Carro {
       : "Digite um tipo de combustível válido (gasolina, alcool ou flex)";
   }
 
-  abastecer(quantidadeParaAbastecer, tipoDeCombustivel) {
-    // método abastecer que respeite o tipo de combustível que o automóvel
-    // aceita e a capacidade máxima de litros.
+  get volumeAtualEmTanque() {
+    return this.#volumeAtualEmTanque;
+  }
 
+  set volumeAtualEmTanque(volumeAtual) {
+    this.#volumeAtualEmTanque =
+      volumeAtual < this.capacidadeDoTanque ? volumeAtual : "volume inválido";
+  }
+
+  abastecer(quantidadeParaAbastecer, tipoDeCombustivel) {
     if (tipoDeCombustivel === this.#tipoDeCombustivel) {
       const quantidadeQuePodeAbastecer =
         this.capacidadeDoTanque - this.volumeAtualEmTanque;
       if (quantidadeParaAbastecer <= quantidadeQuePodeAbastecer) {
         this.volumeAtualEmTanque += quantidadeParaAbastecer;
+        console.log(
+          `O preço do abastecimento para ${quantidadeParaAbastecer}L de ${tipoDeCombustivel} é de ${this.calculaPrecoAbastecimento(
+            quantidadeParaAbastecer,
+            tipoDeCombustivel
+          )}`
+        );
         return;
       }
       this.volumeAtualEmTanque = this.volumeAtualEmTanque;
@@ -62,15 +80,13 @@ class Carro {
   }
 
   calculaPrecoAbastecimento(quantidadeParaAbastecer, tipoDeCombustivel) {
-    if (tipoDeCombustivel === "gasolina") {
-      const precoGasolina = quantidadeParaAbastecer * 5.62;
-      return precoGasolina;
-    }
-    if (tipoDeCombustivel === "alcool") {
-      const precoAlcool = quantidadeParaAbastecer * 4.16;
-      return precoAlcool;
-    }
-    // (gasolina = R$ 5,62/L e etanol = R$ 4,16/L)
+    const valor =
+      this.#precosPorLitro[tipoDeCombustivel] * quantidadeParaAbastecer;
+    const preco = valor.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+    return preco;
   }
 }
 
