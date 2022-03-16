@@ -27,7 +27,7 @@ class Veiculo {
 
   set usaCombustivel(usaCombustivel) {
     this.#usaCombustivel =
-      typeof usaCombustivel === "boolean" ? usaCombustivel : true;
+      typeof usaCombustivel === "boolean" ? usaCombustivel : false;
   }
 }
 
@@ -67,7 +67,7 @@ class Bicicleta extends Veiculo {
   }
 
   set ehInfantil(ehInfantil) {
-    this.#ehInfantil = typeof ehInfantil === "boolean" ? ehInfantil : true;
+    this.#ehInfantil = typeof ehInfantil === "boolean" ? ehInfantil : false;
     if (ehInfantil == true) {
       this.rodas += 2;
     }
