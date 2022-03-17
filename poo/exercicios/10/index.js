@@ -71,7 +71,15 @@ class Seriado extends Programa {
   }
 }
 
-class Filme extends Programa {}
+class Filme extends Programa {
+  constructor(duracao, generos) {
+    super(duracao, generos);
+    const minutosExcedentesDeHoras = this.duracao % 60;
+    const horas = this.duracao - minutosExcedentesDeHoras;
+
+    this.duracao = `${horas / 60}h ${minutosExcedentesDeHoras}m`;
+  }
+}
 
 const sbt = new Programa(5, ["ação", "comédia", "romance"]);
 
