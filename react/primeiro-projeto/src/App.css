@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App header,
+.App footer {
+  background-color: bisque;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App header {
+  min-height: 70px;
+}
+
+.App main {
+  display: flex;
+  flex: 1;
+}
+.App main ul li {
+  list-style: none;
+  font-weight: 500;
+}
+
+.App footer {
+  min-height: 30px;
+}
