@@ -1,13 +1,27 @@
-import { FaSpinner, FaThumbsUp } from "react-icons/fa";
+import { IconType } from "react-icons";
 import "./styles.css";
 
-export function Button() {
-  const temTexto = false;
+type ButtonProps = {
+  id?: string;
+  texto?: string;
+  Icone?: IconType;
+};
+
+// interface IButtonProps {
+//   id?: string;
+//   texto?: string;
+//   Icone?: ReactNode;
+// }
+
+export function Button(props: ButtonProps) {
+  const { id, texto, Icone } = props;
+  //   console.log(props.id);
+  //   console.log(props.texto);
   return (
-    <button className="default-btn">
-      {/* <sbg></sbg> */}
-      <FaThumbsUp />
-      {temTexto ? <p>Text only</p> : <></>}
+    <button id={id} className="default-btn">
+      {Icone && <Icone />}
+      {texto ? <p>{texto}</p> : <></>}
+      {/* {temTexto && <p>Text only</p>} */}
     </button>
   );
 }
