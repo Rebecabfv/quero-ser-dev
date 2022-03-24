@@ -1,0 +1,15 @@
+.sender {
+  background-color: skyblue;
+  color: aliceblue;
+}
+
+.receiver {
+  background-color: gray;
+  color: #333;
+}
+
+.baloon {
+  display: inline-flex;
+  border-radius: 8px;
+  min-width: 120px;
+}
