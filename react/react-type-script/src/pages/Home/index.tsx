@@ -7,6 +7,7 @@ import { Button } from "../../components/Button";
 export function Home() {
   return (
     <div>
+      <a href="/about">Página about</a>
       <Button id="botao-1" Icone={FaThumbsUp} texto="Inscreva-se agora" />
       <Button Icone={FaHeart} />
       <h1>{"Hey".toUpperCase()}</h1>
