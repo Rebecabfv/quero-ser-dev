@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export function Home() {
   return (
     <div>
-      <Link to="/chat">Página ChatBaloon</Link>
+      <Link to="/chat">Go to Chat</Link>
       <hr />
-      <Link to="/gallerry">Página ImageGallerry</Link>
+      <Link to="/gallery">Go to Image Gallery</Link>
     </div>
   );
 }

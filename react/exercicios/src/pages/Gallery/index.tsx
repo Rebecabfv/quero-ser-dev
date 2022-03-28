@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { ImageGallerry } from "../../components/ImageGallerry";
+import { ImageGallery } from "../../components/ImageGallery";
 
-export function Gallerry() {
+export function Gallery() {
   return (
     <div>
-      <ImageGallerry />
+      <ImageGallery />
       <Link to="/">Voltar para o home</Link>
     </div>
   );
