@@ -3,6 +3,7 @@ import "./styles.css";
 
 export function OperationSum() {
   const [soma, setSoma] = useState(0);
+  const [historico, setHistorico] = useState([] as number[]);
 
   function handleSomar(event: React.FormEvent<HTMLFormElement>) {
     // nao deixar a pag carregar novamente
@@ -15,6 +16,10 @@ export function OperationSum() {
     const numero2 = Number((numero2Input as any).value);
 
     setSoma(numero1 + numero2);
+
+    setHistorico((historicoAntigo) => {
+      return [...historicoAntigo, numero1 + numero2];
+    });
 
     console.log(event.target);
   }
@@ -38,6 +43,12 @@ export function OperationSum() {
         <button type="submit">Sum</button>
       </form>
       <h1>Resultado da soma: {soma}</h1>
+      <h2>Historico de operações:</h2>
+      <ul>
+        {historico.map((resultado) => (
+          <li>{resultado}</li>
+        ))}
+      </ul>
     </div>
   );
 }
