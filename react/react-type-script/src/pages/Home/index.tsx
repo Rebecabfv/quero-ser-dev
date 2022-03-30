@@ -15,6 +15,7 @@ export function Home() {
       <h1>{"Hey".toUpperCase()}</h1>
       <h1>Hey</h1>
       <TaskList />
+      <Link to="/oparation">Operation Sum</Link>
     </div>
   );
 }
