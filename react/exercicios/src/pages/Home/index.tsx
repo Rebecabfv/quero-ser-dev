@@ -7,6 +7,8 @@ export function Home() {
       <Link to="/chat">Go to Chat</Link>
       <hr />
       <Link to="/gallery">Go to Image Gallery</Link>
+      <hr />
+      <Link to="/count">Go to Count</Link>
     </div>
   );
 }
