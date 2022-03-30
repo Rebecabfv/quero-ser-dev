@@ -9,6 +9,8 @@ export function Home() {
       <Link to="/gallery">Go to Image Gallery</Link>
       <hr />
       <Link to="/count">Go to Count</Link>
+      <hr />
+      <Link to="/list">Go to List Students</Link>
     </div>
   );
 }
