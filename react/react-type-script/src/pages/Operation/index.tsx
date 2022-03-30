@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 export function OperationSum() {
-  let soma = 0;
+  const [soma, setSoma] = useState(0);
 
   function handleSomar(event: React.FormEvent<HTMLFormElement>) {
     // nao deixar a pag carregar novamente
@@ -14,7 +14,7 @@ export function OperationSum() {
     const numero2Input = event.currentTarget.querySelector("#number-two");
     const numero2 = Number((numero2Input as any).value);
 
-    soma = numero1 + numero2;
+    setSoma(numero1 + numero2);
 
     console.log(event.target);
   }
