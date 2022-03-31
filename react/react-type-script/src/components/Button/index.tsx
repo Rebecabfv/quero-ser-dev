@@ -1,9 +1,10 @@
+import { ReactNode } from "react";
 import { IconType } from "react-icons";
 import "./styles.css";
 
 type ButtonProps = {
   id?: string;
-  texto?: string;
+  children?: ReactNode;
   Icone?: IconType;
 };
 
@@ -14,14 +15,15 @@ type ButtonProps = {
 // }
 
 export function Button(props: ButtonProps) {
-  const { id, texto, Icone } = props;
+  const { id, Icone, children } = props;
   //   console.log(props.id);
   //   console.log(props.texto);
   return (
     <button id={id} className="default-btn">
       {Icone && <Icone />}
-      {texto ? <p>{texto}</p> : <></>}
+      {/* {texto ? <p>{texto}</p> : <></>} */}
       {/* {temTexto && <p>Text only</p>} */}
+      {children}
     </button>
   );
 }

@@ -10,12 +10,22 @@ export function Home() {
     <div>
       {/* <a href="/about">Página about</a> */}
       <Link to="/about">Página about</Link>
-      <Button id="botao-1" Icone={FaThumbsUp} texto="Inscreva-se agora" />
+      <hr />
+      <Link to="/oparation">Operation Sum</Link>
+      <hr />
+      <Button id="botao-1" Icone={FaThumbsUp}>
+        Inscreva-se agora
+      </Button>
+      {/* <Button id="botao-1" Icone={FaThumbsUp} texto="Inscreva-se agora" /> */}
       <Button Icone={FaHeart} />
+      <Button>Teste</Button>
+      <Button>
+        <img src="https://github.com/rebecabfv.png" alt="" height={60} />
+        <h1>Rebeca</h1>
+      </Button>
       <h1>{"Hey".toUpperCase()}</h1>
       <h1>Hey</h1>
       <TaskList />
-      <Link to="/oparation">Operation Sum</Link>
     </div>
   );
 }
