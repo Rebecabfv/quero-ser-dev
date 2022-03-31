@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 export function Home() {
   return (
     <div>
+      <button></button>
       {/* <a href="/about">Página about</a> */}
       <Link to="/about">Página about</Link>
       <hr />
@@ -18,7 +19,10 @@ export function Home() {
       </Button>
       {/* <Button id="botao-1" Icone={FaThumbsUp} texto="Inscreva-se agora" /> */}
       <Button Icone={FaHeart} />
-      <Button>Teste</Button>
+      <Button>
+        Teste
+        <FaThumbsUp />
+      </Button>
       <Button>
         <img src="https://github.com/rebecabfv.png" alt="" height={60} />
         <h1>Rebeca</h1>
