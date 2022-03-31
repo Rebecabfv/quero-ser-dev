@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 export function PresentList() {
   const [studentToAdd, setStudentToAdd] = useState("");
@@ -35,7 +36,7 @@ export function PresentList() {
       <h1>Lista dos Alunos:</h1>
       <ul>
         {names.map((name, indice) => (
-          <li>{`${indice + 1} ) ${name}`}</li>
+          <li key={uuid()}>{`${indice + 1} ) ${name}`}</li>
         ))}
       </ul>
     </div>
