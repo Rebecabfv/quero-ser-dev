@@ -14,6 +14,7 @@ export function Home() {
       <hr />
       <Link to="/oparation">Operation Sum</Link>
       <hr />
+      <Link to="/animal-facts">Fatos sobre animais</Link>
       <Button id="botao-1" Icone={FaThumbsUp}>
         Inscreva-se agora
       </Button>
