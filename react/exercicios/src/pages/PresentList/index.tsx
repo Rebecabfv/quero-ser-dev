@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export function PresentList() {
+  const [studentToAdd, setStudentToAdd] = useState("");
   const [names, setNomes] = useState([] as string[]);
 
   function handleAdicionarNomes(event: React.FormEvent<HTMLFormElement>) {
@@ -21,7 +22,12 @@ export function PresentList() {
     <div>
       <form action="" onSubmit={handleAdicionarNomes}>
         <label htmlFor="add-name">Nome do aluno: </label>
-        <input type="text" name="" id="add-name" />
+        <input
+          type="text"
+          id="add-name"
+          value={studentToAdd}
+          onChange={(event) => setStudentToAdd(event.target.value)}
+        />
 
         <button type="submit">Adicionar na lista</button>
       </form>
