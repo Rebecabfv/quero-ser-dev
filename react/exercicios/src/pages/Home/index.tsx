@@ -11,6 +11,8 @@ export function Home() {
       <Link to="/count">Go to Count</Link>
       <hr />
       <Link to="/list">Go to List Students</Link>
+      <hr />
+      <Link to="/github">Go to GitHub Rebeca</Link>
     </div>
   );
 }

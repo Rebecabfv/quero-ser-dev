@@ -7,6 +7,7 @@ import { Chat } from "./pages/Chat";
 import { Gallery } from "./pages/Gallery";
 import { Contador } from "./pages/Contador";
 import { PresentList } from "./pages/PresentList";
+import { InfoGitHub } from "./pages/InfoGitHub";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="chat" element={<Chat />} />
         <Route path="count" element={<Contador />} />
         <Route path="list" element={<PresentList />} />
+        <Route path="github" element={<InfoGitHub />} />
       </Routes>
     </div>
   );
