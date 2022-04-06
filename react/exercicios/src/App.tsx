@@ -8,6 +8,7 @@ import { Gallery } from "./pages/Gallery";
 import { Contador } from "./pages/Contador";
 import { PresentList } from "./pages/PresentList";
 import { InfoGitHub } from "./pages/InfoGitHub";
+import { Theme } from "./pages/Theme";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="count" element={<Contador />} />
         <Route path="list" element={<PresentList />} />
         <Route path="github" element={<InfoGitHub />} />
+        <Route path="theme" element={<Theme />} />
       </Routes>
     </div>
   );
