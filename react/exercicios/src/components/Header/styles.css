@@ -1,0 +1,13 @@
+.app-header {
+  background: yellowgreen;
+  color: black;
+}
+
+.theme-light {
+  background: #fff;
+}
+
+.theme-dark {
+  background: #000;
+  color: #dedede;
+}
