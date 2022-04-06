@@ -13,6 +13,8 @@ export function Home() {
       <Link to="/list">Go to List Students</Link>
       <hr />
       <Link to="/github">Go to GitHub Rebeca</Link>
+      <hr />
+      <Link to="/theme">Go to Theme</Link>
     </div>
   );
 }
