@@ -38,9 +38,23 @@ public class AvaliacaoMainExercicio {
             }
         }));
 
+        //usando BiPredicate
+        avaliarAlunoPredicate(((nota, faltas) -> {
+            if ((int)nota > 5 && (int)faltas < 20){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }));
+
+        // BiPredicate com outra implementacao
         BiPredicate<Integer, Integer> avaliacao = (nota, faltas) -> (nota > 6 && faltas < 5);
         System.out.println(avaliacao.test(20, 1));
+    }
 
+    static void avaliarAlunoPredicate (BiPredicate avaliacao) {
+        avaliacao.test(6,7);
     }
 
     public static void avaliar(Avaliacao avaliacao) {
