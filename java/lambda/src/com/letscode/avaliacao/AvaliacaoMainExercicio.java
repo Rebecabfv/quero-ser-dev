@@ -1,4 +1,4 @@
-package com.letscode;
+package com.letscode.avaliacao;
 
 import java.util.function.BiPredicate;
 

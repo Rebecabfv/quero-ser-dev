@@ -1,4 +1,4 @@
-package com.letscode;
+package com.letscode.avaliacao;
 
 @FunctionalInterface
 public interface Avaliacao {
