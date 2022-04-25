@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class IOAPI {
     public static void main(String args []) throws IOException {
-        copiarArquivo();
-        copiarArquivoCatchException();
+//        copiarArquivo();
+//        copiarArquivoCatchException();
         editarArquivos();
-        lerScanner();
+//        lerScanner();
     }
 
     public static void copiarArquivo() throws IOException { //Sinalizando que esse metodos pode gerar um IOException. Nao trato de alguma forma
@@ -64,6 +64,7 @@ public class IOAPI {
             }
         }
     }
+
     public static void editarArquivos() throws IOException {
         FileReader ler = new FileReader("arquivoentrada.txt");
         BufferedReader leitor = new BufferedReader(ler);
@@ -72,8 +73,13 @@ public class IOAPI {
         String linha;
 
         while((linha = leitor.readLine())!= null) {
-            linha = "texto!"; //substituindo o texto do arquivo de entrada por "texto!"
-            buffer.write(linha.getBytes());
+            if (linha.contains("pedra")){
+                linha = linha.replace("pedra", "Java").concat("\n");
+                buffer.write(linha.getBytes());
+            } else {
+                linha = linha.concat("\n");
+                buffer.write(linha.getBytes());
+            }
         }
         buffer.close();
     }
