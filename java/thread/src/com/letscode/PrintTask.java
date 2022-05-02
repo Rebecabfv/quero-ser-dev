@@ -1,6 +1,6 @@
 package com.letscode;
 
-public class PrintTask  {
+public class PrintTask implements Runnable{
     private final String taskName;
 
     // constructor
@@ -10,7 +10,12 @@ public class PrintTask  {
 
     // print task name
     public void print() {
-        System.out.printf("Task %s printed%n", taskName);
+        System.out.printf("Tarefa %s impressa%n", taskName);
     }
 
+
+    @Override
+    public void run() {
+        print();
+    }
 }
