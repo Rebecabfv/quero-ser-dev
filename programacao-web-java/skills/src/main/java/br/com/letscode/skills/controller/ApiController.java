@@ -17,29 +17,31 @@ public class ApiController {
     private final SkillsServiceImpl skillsService;
 
     @GetMapping (path = "/{id}")
-    public ResponseEntity<SkillsDto> getSkills (@PathVariable(name = "id") int id){
+    public ResponseEntity<SkillsDto> getSkills (@PathVariable(name = "id") Integer id){
         log.info("GET {}", id);
         var skillsDto = skillsService.getSkillsById(id);
-
         return new ResponseEntity(skillsDto , HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<SkillsDto> postSkills (@RequestBody SkillsDto skillsDto){
-
+    public ResponseEntity<Void> saveSkills (@RequestBody final SkillsDto skillsDto) {
+        log.info("POST {}", skillsDto);
+        skillsService.save(skillsDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping
-    public ResponseEntity<SkillsDto> uptadeSkills (@RequestBody SkillsDto skillsDto){
-        skillsService.uptadeSkills();
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @PutMapping (path = "/{id}")
+    public ResponseEntity<SkillsDto> uptadeSkills (@RequestBody final SkillsDto skillsDto){
+        log.info("PUT {}", skillsDto);
+        skillsService.uptadeSkills(skillsDto);
+        return new ResponseEntity<>(skillsDto, HttpStatus.CREATED);
     }
 
-    @DeleteMapping (path = "/{id}")
-    public ResponseEntity<SkillsDto> deleteSkills (@PathVariable(name = "id") int id) {
-        skillsService.deleteSkills();
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Void> deleteSkills (@PathVariable final Integer id){
+        skillsService.deleteSkills(id);
+
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
 }

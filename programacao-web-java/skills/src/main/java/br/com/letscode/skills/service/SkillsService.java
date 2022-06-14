@@ -1,12 +1,15 @@
 package br.com.letscode.skills.service;
 
+import br.com.letscode.skills.domain.model.SkillsEntity;
 import br.com.letscode.skills.dto.SkillsDto;
 
 public interface SkillsService {
 
-    SkillsDto getSkillsById(int id);
+    SkillsEntity getSkillsById(Integer id);
 
-    void uptadeSkills();
+    void save(SkillsDto skillsDto);
 
-    void deleteSkills();
+    void uptadeSkills(SkillsDto skillsDto);
+
+    void deleteSkills(Integer id);
 }

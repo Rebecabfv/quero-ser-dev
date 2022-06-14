@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SkillsDto {
-    private int id;
+    private Integer id;
     private String nome;
     private String descricao;
 }
